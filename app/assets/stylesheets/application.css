@@ -10,142 +10,142 @@
  */
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-	margin: 2rem;
-	background-color: #f9fafb;
-	color: #111827;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 2rem;
+  background-color: #f9fafb;
+  color: #111827;
 }
 
 .page-header,
 .page-actions {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 1rem;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .page-header h1,
 .movie-details h1 {
-	margin: 0;
+  margin: 0;
 }
 
 .button {
-	display: inline-block;
-	padding: 0.5rem 1rem;
-	background-color: #2563eb;
-	color: #fff;
-	border-radius: 0.375rem;
-	text-decoration: none;
-	transition: background-color 0.2s ease-in-out;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .button:hover {
-	background-color: #1d4ed8;
+  background-color: #1d4ed8;
 }
 
 .flash {
-	padding: 0.75rem 1rem;
-	border-radius: 0.375rem;
-	margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
 }
 
 .flash.notice {
-	background-color: #dcfce7;
-	border: 1px solid #22c55e;
+  background-color: #dcfce7;
+  border: 1px solid #22c55e;
 }
 
 .flash.alert {
-	background-color: #fee2e2;
-	border: 1px solid #ef4444;
+  background-color: #fee2e2;
+  border: 1px solid #ef4444;
 }
 
 .movies-table {
-	width: 100%;
-	border-collapse: collapse;
-	margin-top: 1.5rem;
-	background-color: #fff;
-	border-radius: 0.5rem;
-	overflow: hidden;
-	box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
 }
 
 .movies-table th,
 .movies-table td {
-	padding: 0.75rem 1rem;
-	border-bottom: 1px solid #e5e7eb;
-	text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
 }
 
 .movies-table tbody tr:last-child td {
-	border-bottom: none;
+  border-bottom: none;
 }
 
 .movies-table th a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .movies-table th.sorted,
 .movies-table th .sorted,
 #title_header.sorted,
 #release_date_header.sorted {
-	background-color: #fef3c7;
+  background-color: #fef3c7;
 }
 
 .movies-table tr:nth-child(even) {
-	background-color: #f9fafb;
+  background-color: #f9fafb;
 }
 
 .actions-column {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 .actions-column a {
-	margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .movie-details {
-	background-color: #fff;
-	padding: 1.5rem;
-	border-radius: 0.5rem;
-	box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
-	margin-bottom: 1.5rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+  margin-bottom: 1.5rem;
 }
 
 .movie-details dl {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
 .movie-details dt {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .form-field {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .form-field input {
-	padding: 0.5rem;
-	border: 1px solid #d1d5db;
-	border-radius: 0.375rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
 }
 
 .form-actions {
-	display: flex;
-	gap: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .form-errors {
-	border: 1px solid #ef4444;
-	background-color: #fee2e2;
-	color: #991b1b;
-	padding: 1rem;
-	border-radius: 0.375rem;
-	margin-bottom: 1rem;
+  border: 1px solid #ef4444;
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
 }
