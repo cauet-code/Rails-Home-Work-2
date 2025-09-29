@@ -62,5 +62,3 @@ docker run -d -p 80:80 \
 - Views em `app/views/movies/` (`index`, `show`, `new`, `edit` e `_form`)
 - Rota raiz: `movies#index`
 
-Sinta-se à vontade para abrir issues ou enviar melhorias.
-
