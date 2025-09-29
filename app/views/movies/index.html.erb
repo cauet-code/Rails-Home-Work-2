@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Catálogo de Filmes</h1>
+  <%= link_to "Adicionar novo filme", new_movie_path, class: "button" %>
+</div>
+
+<% if @movies.any? %>
+  <table class="movies-table">
+    <thead>
+      <tr>
+        <th class="<%= sorted_header_class("title") %>">
+          <%= link_to "Título", movies_path(sort: "title"), id: "title_header", class: sorted_header_class("title") %>
+        </th>
+        <th>Classificação</th>
+        <th class="<%= sorted_header_class("release_date") %>">
+          <%= link_to "Data de lançamento", movies_path(sort: "release_date"), id: "release_date_header", class: sorted_header_class("release_date") %>
+        </th>
+        <th class="actions-column">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td><%= movie.title %></td>
+          <td><%= movie.rating %></td>
+          <td><%= movie.release_date&.strftime("%d/%m/%Y") || "-" %></td>
+          <td class="actions-column">
+            <%= link_to "Ver", movie_path(movie) %>
+            <%= link_to "Editar", edit_movie_path(movie) %>
+            <%= link_to "Remover", movie_path(movie), data: { turbo_method: :delete, turbo_confirm: "Tem certeza que deseja remover este filme?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Nenhum filme cadastrado ainda.</p>
+<% end %>

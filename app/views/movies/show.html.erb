@@ -1,0 +1,23 @@
+<article class="movie-details">
+  <h1><%= @movie.title %></h1>
+
+  <dl>
+    <div>
+      <dt>Classificação</dt>
+      <dd><%= @movie.rating.presence || "-" %></dd>
+    </div>
+    <div>
+      <dt>Data de lançamento</dt>
+      <dd><%= @movie.release_date&.strftime("%d/%m/%Y") || "-" %></dd>
+    </div>
+    <div>
+      <dt>Registrado em</dt>
+      <dd><%= @movie.created_at.strftime("%d/%m/%Y %H:%M") %></dd>
+    </div>
+  </dl>
+</article>
+
+<div class="page-actions">
+  <%= link_to "Editar", edit_movie_path(@movie), class: "button" %>
+  <%= link_to "Voltar", movies_path %>
+</div>

@@ -1,0 +1,31 @@
+<%= form_with model: movie do |form| %>
+  <% if movie.errors.any? %>
+    <div class="form-errors">
+      <h2><%= pluralize(movie.errors.count, "erro") %> impedem o salvamento:</h2>
+      <ul>
+        <% movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+  <%= form.label :title, "Título" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :rating, "Classificação" %>
+    <%= form.text_field :rating %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :release_date, "Data de Lançamento" %>
+    <%= form.date_field :release_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit movie.new_record? ? "Criar filme" : "Atualizar filme" %>
+  </div>
+<% end %>
