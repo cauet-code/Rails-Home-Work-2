@@ -1,68 +1,66 @@
-# myrottenpotatoes
+## RottenPotatoes (Rails 8)
 
-Aplicação Rails construída seguindo o roteiro do capítulo 4 do livro *Engineering Software as a Service* e as orientações do exercício prático de Git & Rails. O app permite cadastrar filmes, consultar detalhes, editar, remover e ordenar a listagem por título ou data de lançamento.
+Aplicação Rails que implementa o clássico RottenPotatoes: um catálogo simples de filmes em que é possível criar, listar, ordenar, visualizar, editar e excluir registros. A listagem permite ordenar por título e por data de lançamento, e as views reutilizam um partial de formulário para criação/edição.
 
-## Requisitos atendidos
+Principais pontos da implementação:
+- Modelo `Movie` com atributos: `title`, `rating` e `release_date`.
+- Rotas RESTful via `resources :movies` e rota raiz em `movies#index`.
+- CRUD completo com mensagens flash nas ações de create/update/destroy.
+- Ordenação clicável na index (título e data de lançamento) com destaque visual na coluna ativa.
 
-- ✅ CRUD completo do modelo `Movie` (`title`, `rating`, `release_date`).
-- ✅ Rotas RESTful (`resources :movies`) com `root` em `movies#index`.
-- ✅ Views para `index`, `show`, `new`, `edit` com formulários reutilizando o partial `_form`.
-- ✅ Mensagens flash para operações de criação, atualização e remoção.
-- ✅ Ordenação clicável por título e data de lançamento com destaque visual para a coluna ativa.
-- ✅ Repositório Git iniciado com commit inicial.
+### Stack
+- Ruby 3.4.6
+- Rails 8.0.3
+- SQLite (desenvolvimento e teste)
 
-## Stack
+---
 
-- Ruby 3.4.6 (vide `.ruby-version`).
-- Rails 8.0.3.
-- Banco de dados SQLite (default development/test).
+## Como instalar e rodar
 
-## Preparando o ambiente
+Pré-requisitos:
+- Ruby 3.4.x e Bundler instalados.
+- SQLite3 disponível no sistema (macOS já inclui; se necessário, instale via Homebrew).
 
-1. Instale as dependências Ruby:
+1) Instalar dependências
+```bash
+bundle install
+```
 
-	```bash
-	bundle install
-	```
+2) Preparar o banco de dados
+```bash
+bin/rails db:prepare
+# Se quiser popular com dados de exemplo (seeds):
+# bin/rails db:seed
+```
 
-2. Crie e atualize o banco de dados:
+3) Subir o servidor de desenvolvimento
+```bash
+bin/rails server
+```
 
-	```bash
-	bin/rails db:setup
-	```
-
-3. Inicie o servidor de desenvolvimento:
-
-	```bash
-	bin/rails server
-	```
-
-4. Acesse `http://localhost:3000` para usar o app.
+4) Acessar no navegador
+- http://localhost:3000
 
 ## Testes
-
-Execute a suíte padrão do Rails:
-
 ```bash
 bin/rails test
 ```
 
-Nenhum teste customizado foi adicionado ainda, mas o comando garante que o ambiente está configurado corretamente.
+## Executar com Docker (opcional)
+Este repositório inclui um `Dockerfile` voltado para produção. Exemplo básico:
+```bash
+docker build -t myrottenpotatoes .
+docker run -d -p 80:80 \
+  -e RAILS_MASTER_KEY=$(cat config/master.key) \
+  --name myrottenpotatoes myrottenpotatoes
+```
 
-## Fluxo de trabalho com Git
+---
 
-- O repositório já está inicializado (`git init`) e contém o commit inicial.
-- Configure um remoto próprio antes de publicar:
+## Estrutura e rotas
+- Controlador principal: `MoviesController`
+- Views em `app/views/movies/` (`index`, `show`, `new`, `edit` e `_form`)
+- Rota raiz: `movies#index`
 
-  ```bash
-  git remote add origin <URL-do-seu-repositório>
-  git push -u origin main
-  ```
+Sinta-se à vontade para abrir issues ou enviar melhorias.
 
-- Faça commits pequenos e frequentes ao evoluir funcionalidades.
-
-## Próximos passos sugeridos
-
-- Adicionar validações de modelo (ex.: presença de título, formato de data).
-- Criar testes de sistema exercitando o fluxo de cadastro e ordenação.
-- Melhorar a camada de apresentação com componentes reutilizáveis e i18n completo.
